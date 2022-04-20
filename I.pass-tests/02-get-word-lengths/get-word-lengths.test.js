@@ -1,9 +1,15 @@
-var wordLengths = require("./get-word-lengths");
+const { getWordLengths } = require("./get-word-lengths");
 
-test("Get word lengths", function() {
-  var words = ["sun", "potato", "roundabout", "pizza"];
-  var expected = [3, 6, 10, 5];
+describe('given the wordLengths function', () => {
+  it('for the input ["sun", "potato", "roundabout", "pizza"] it will return the lenghts of the words', () => {
+    //arrange
+    const words = ["sun", "potato", "roundabout", "pizza"];
+    const expected = [3, 6, 10, 5];
 
-  var output = wordLengths(words);
-  expect(output).toEqual(expected);
-});
+    //act
+    const result = getWordLengths(words);
+
+    //assert
+    expect(result).toEqual(expected)
+  })
+})

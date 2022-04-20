@@ -16,4 +16,6 @@ const paintShop = (carsArray, color) => {
 
 }
 
-module.exports = paintShop;
+module.exports = {
+    paintShop
+};

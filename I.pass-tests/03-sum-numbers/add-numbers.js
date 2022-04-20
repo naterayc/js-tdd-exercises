@@ -1,4 +1,8 @@
 function addNumbers(numbers) {
-    return(numbers.reduce((a,b) => a + b ))
-}
-module.exports = addNumbers;
+    if (!Array.isArray(numbers)) throw new Error("Error");
+    return (numbers.reduce((a, b) => a + b));
+};
+
+module.exports = { 
+    addNumbers 
+};

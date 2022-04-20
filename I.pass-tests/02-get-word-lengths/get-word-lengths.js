@@ -1,9 +1,13 @@
-var getWordLengths = function(someWords) {
-    let lengths = []
+const getWordLengths = (someWords) => {
+    let lengths = [];
+    if (!Array.isArray(someWords)) throw new Error("Error");
     someWords.forEach(element => {
-        lengths.push(element.length)
+        if (typeof (element) === 'string') lengths.push(element.length);
+        else throw new Error("Error");
     });
-    return lengths
+    return lengths;
 };
 
-module.exports = getWordLengths;
+module.exports = { 
+    getWordLengths 
+};

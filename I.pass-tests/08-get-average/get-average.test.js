@@ -1,10 +1,15 @@
-var average = require("./get-average");
+var { numbersAverage } = require("./get-average");
 
-test("Average", function() {
-  var numbers = [4, "-", 8, 11, "hello", "57", 0, 2];
-  var expected = 5;
+describe('given numbersAverage function', () => {
+  it('return the average of numbers in the input', () => {
+    //arrange
+    var numbers = [4, "-", 8, 11, "hello", "57", 0, 2];
+    var expected = 5;
 
-  var output = average(numbers);
-
-  expect(output).toEqual(expected);
+    //act
+    var result = numbersAverage(numbers);
+    
+    //assert
+    expect(result).toEqual(expected);
+  });
 });

@@ -4,4 +4,6 @@ const formatCities = (capitals, formatter) => {
     });
 }
 
-module.exports = formatCities;
+module.exports = {
+    formatCities
+};

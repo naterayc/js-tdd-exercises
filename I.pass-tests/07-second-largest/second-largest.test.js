@@ -1,9 +1,14 @@
-var secondLargest = require("./second-largest");
+const { secondLargest } = require("./second-largest");
 
-test("Second largest", function() {
-  var numbers = [2, 0, 23, 0, 57, 1, 230];
+describe('given de secondLargest function', () => {
+  it('return the second largest number of the input', () => {
+    //arrange
+    const numbers = [2, 0, 23, 0, 57, 1, 230];
 
-  var output = secondLargest(numbers);
-
-  expect(output).toEqual(57);
+    //act
+    const result = secondLargest(numbers);
+    
+    //assert
+    expect(result).toEqual(57);
+  });
 });

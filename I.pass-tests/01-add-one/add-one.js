@@ -1,7 +1,13 @@
-module.exports = function(numbers) {
-    let result = []
+const addOne = (numbers) => {
+    let result = [];
+    if (!Array.isArray(numbers)) throw new Error("Error");
     numbers.forEach(element => {
-        result.push(element + 1)
+        if (typeof (element) === 'number') result.push(element + 1);
+        else throw new Error("Error");
     });
-    return result
+    return result;
+};
+
+module.exports = {
+    addOne
 };

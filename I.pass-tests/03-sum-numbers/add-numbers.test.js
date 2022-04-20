@@ -1,10 +1,15 @@
-var addAllnumbers = require("./add-numbers");
+const { addNumbers } = require("./add-numbers");
 
-test("Add all numbers", function() {
-  var numbers = [9, 23, 10, 3, 8];
-  var expected = 53;
+describe('given the addNumbers function', () => {
+  it('for the input [9, 23, 10, 3, 8] it will return 53 when the function is called', () => {
+    //arrange
+    const numbers = [9, 23, 10, 3, 8];
+    const expected = 53;
 
-  var output = addAllnumbers(numbers);
+    //act
+    const result = addNumbers(numbers);
 
-  expect(output).toEqual(expected);
-});
+    //assert
+    expect(result).toEqual(expected);
+  })
+})

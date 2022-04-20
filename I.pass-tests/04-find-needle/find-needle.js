@@ -1,5 +1,8 @@
-function findNeedle(words, query) {
-    return(words.indexOf(query))
-}
+const findTheNeedle = (words, query) => {
+    if (!Array.isArray(words)) throw new Error("Error");
+    return (words.indexOf(query));
+};
 
-module.exports = findNeedle;
+module.exports = {
+    findTheNeedle
+};
