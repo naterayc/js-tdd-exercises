@@ -1,31 +1,29 @@
-function removeVowels(word) {
-  var characters = word.split("");
-
-  var result = [];
-
-  characters.forEach(function(character) {
+const removeVowels = (word, isArray) => {
+  const characters = word.split("");
+  const result = [];
+  const charactersRegex = new RegExp('([aeiou\u00E0-\u00FC])')
+  characters.forEach((character) =>{
     if (
-      character === "a" ||
-      character === "o" ||
-      character === "i" ||
-      character === "e" ||
-      character === "u"
+      charactersRegex.test(character.toLowerCase())
     ) {
+      isArray ? result.push('') : result.push("_")
+    }
+    else {
       result.push(character);
-    } else {
-      result.push("_");
     }
   });
 
   return result.join("");
 }
 
-module.exports = removeVowels;
+module.exports = {
+  removeVowels
+};
 
 /*
   Let's trace this piece of code - what is the value of result with this input
 
-  var result = removeVowels('samuel');
+  const result = removeVowels('samuel');
 
   what is the value of result?
 */

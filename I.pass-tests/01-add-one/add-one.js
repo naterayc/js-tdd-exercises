@@ -1,11 +1,7 @@
 const addOne = (numbers) => {
-    let result = [];
-    if (!Array.isArray(numbers)) throw new Error("Error");
-    numbers.forEach(element => {
-        if (typeof (element) === 'number') result.push(element + 1);
-        else throw new Error("Error");
+    return numbers.map(element => {
+        if (typeof (element) === 'number') return element + 1;
     });
-    return result;
 };
 
 module.exports = {
