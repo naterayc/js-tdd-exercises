@@ -12,29 +12,39 @@ describe('given the largerThanTen function', () => {
         //assert
         expect(result).toEqual(expected);
     });
-    
+
     it('for the input ["word", "22", 5] it should throw an error', () => {
         //arrange
         const numbers = ['word', '22', 5];
-
-        //act
         const result = () => {
             largerThanTen(numbers);
         }
 
-        //assert
+        //act and assert
         expect(result).toThrowError('Error')
-    })
-    it('for the input [] it should throw an error', () => {
+    });
+
+    it('for the input [] it should return []', () => {
         //arrange
         const numbers = [];
 
         //act
-        const result = () => {
-            largerThanTen(numbers);
-        }
+        const result = largerThanTen(numbers);
         
         //assert
-        expect(result).toThrowError('Error')
-    })
+        expect(result).toEqual(numbers);
+    });
+
+    it('for the input [1, 2, 3] it should return []', () => {
+        //arrange
+        const numbers = [1, 2, 3];
+        const output = [];
+
+        //act
+        const result = largerThanTen(numbers);
+        
+
+        //act and assert
+        expect(result).toEqual(output);
+    });
 });

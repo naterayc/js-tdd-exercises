@@ -2,17 +2,15 @@ const removeVowels = (word, isArray) => {
   const characters = word.split("");
   const result = [];
   const charactersRegex = new RegExp('([aeiou\u00E0-\u00FC])')
-  characters.forEach((character) =>{
-    if (
-      charactersRegex.test(character.toLowerCase())
-    ) {
-      isArray ? result.push('') : result.push("_")
+  characters.forEach((character) => {
+    if (charactersRegex.test(character.toLowerCase())) {
+      if (isArray) result.push('');
+      else result.push('_');
     }
     else {
       result.push(character);
     }
   });
-
   return result.join("");
 }
 

@@ -1,8 +1,9 @@
 const { removeVowels } = require("../02-remove-vowels/remove-vowels");
-const isArray = true;
+
 const removeVowelsForWords = (words) => {
+  const isArray = Array.isArray(words);
   const result = words.map((word) => {
-    if(typeof(word) != 'string') throw new Error("Error");
+    if (typeof (word) != 'string') throw new Error("Error");
     else return removeVowels(word, isArray);
   });
 

@@ -1,13 +1,37 @@
-var getLargestNumber = require('./largest-number');
+const { getLargestNumber } = require('./largest-number');
 
-test('get the largest number', () => {
-    var numbers = [3, 21, 88, 4, 36];
-    var output = 88;
+describe('given the getLargestNumber function', () => {
+    it('for the input [3, 21, 88, 4, 36] it should return 88 without modifying the original input', () => {
+        //arrange
+        const numbers = [3, 21, 88, 4, 36];
+        const expectedNumbers = [3, 21, 88, 4, 36];
+        const output = 88;
 
-    var result = getLargestNumber(numbers)
+        //act
+        const result = getLargestNumber(numbers);
 
-    expect(result).toEqual(output);
-})
+        //assert
+        expect(result).toEqual(output);
+        expect(numbers).toEqual(expectedNumbers);
+    });
+
+    it('for the following invalid inputs it should throw an error', () => {
+        //arrange
+        const numbers = "2, 3, 4";
+        const numbersII = ["2", "3", "4"];
+        const result = () => {
+            getLargestNumber(numbers);
+        };
+        const resultII = () => {
+            getLargestNumber(numbersII);
+        };
+        
+        //act and assert
+        expect(result).toThrowError('Error');
+        expect(resultII).toThrowError(Error);
+    });
+});
+
 
 // example
 // input: [3, 21, 88, 4, 36];

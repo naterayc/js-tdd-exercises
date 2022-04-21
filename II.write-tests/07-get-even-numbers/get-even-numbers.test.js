@@ -1,13 +1,47 @@
-var getEven = require('./get-even-numbers');
+const { getEven } = require('./get-even-numbers');
 
-test('get even', () => {
-    var input = [22, 13, 73, 82, 4];
-    var output = [22, 82, 4];
+describe('given the getEven function', () => {
+    it('for the input [22, 13, 73, 82, 4] it should return [22, 82, 4]', () => {
+        //arrange
+        const input = [22, 13, 73, 82, 4];
+        const output = [22, 82, 4];
 
-    var result = getEven(input);
+        //act
+        const result = getEven(input);
 
-    expect(result).toEqual(output);
-})
+        //assert
+        expect(result).toEqual(output);
+    });
+
+    it('for the input [] it should return []', () => {
+        //arrange
+        const input = [];
+        const output = [];
+
+        //act
+        const result = getEven(input);
+
+        //assert
+        expect(result).toEqual(output);
+    });
+
+    it('for invalid inputs it should throw an error', () => {
+        //arrange
+        const input = "22, 13, 73, 82, 4";
+        const inputII = 22;
+        const result = () => {
+            getEven(input);
+        }
+        const resultII = () => {
+            getEven(inputII);
+        }
+
+        //act and assert
+        expect(result).toThrowError(Error);
+        expect(resultII).toThrowError(Error);
+    });
+});
+
 
 // example
 // input: [22, 13, 73, 82, 4];
