@@ -1,11 +1,7 @@
 const greetPeople = (people) => {
   const greeting = "Hello ";
-  let listOfGreetings = [];
-  people.forEach((person) => {
-    listOfGreetings.push(greeting + person);
-  });
-
-  return listOfGreetings;
+  //let listOfGreetings = [];
+  return people.map((person) => greeting + person);
 }
 
 module.exports = {
