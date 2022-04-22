@@ -48,4 +48,15 @@ describe('given the factorial function', () => {
       expect(out5).toEqual(exp5);
     });
   });
+  describe('for an invalid input it will return undefined', () => {
+    it('for the input "lala" it will return undefined', () => {
+      //arrange
+      const in6 = 'lala';
+      const exp6 = undefined;
+      //act
+      const out6 = factorial(in6);
+      //assert
+      expect(out6).toEqual(exp6);
+    });
+  });
 });

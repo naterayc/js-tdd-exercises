@@ -12,4 +12,13 @@ describe('given numbersAverage function', () => {
     //assert
     expect(result).toEqual(expected);
   });
+
+  it('for the input "1, 6, 8, 25" it will throw an error', () => {
+    //arrange
+    const numbers = "1, 6, 8, 25";
+    const result = () => numbersAverage(numbers);
+
+    //act and assert
+    expect(result).toThrow(Error);
+  })
 });

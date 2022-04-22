@@ -24,4 +24,13 @@ describe('given the findTheNeedle function', () => {
     //assert
     expect(result).toEqual(expected);
   });
+
+  it('for the input "plant, shelf, arrow, bird" it will throw an error', () => {
+    //arrange
+    const words = "plant, shelf, arrow, bird";
+    const result = () => findTheNeedle(words, "plant");
+
+    //act and assert
+    expect(result).toThrow(Error);
+  })
 });
