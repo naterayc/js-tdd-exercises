@@ -13,6 +13,17 @@ describe('given the largerThanTen function', () => {
         expect(result).toEqual(expected);
     });
 
+    it('for the input "22, 5, 2" it should throw an error', () => {
+        //arrange
+        const numbers = "22, 5, 2";
+        const result = () => {
+            largerThanTen(numbers);
+        }
+
+        //act and assert
+        expect(result).toThrowError('Error')
+    });
+    
     it('for the input ["word", "22", 5] it should throw an error', () => {
         //arrange
         const numbers = ['word', '22', 5];
