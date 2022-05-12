@@ -36,11 +36,11 @@ describe('given the getReposWithFetcher and the fetcher functions', () => {
   });
 
   it('if the promise is rejected with 403', () => {
-    // arrange
+    //arrange
     fetcher.mockRejectedValue({ status: 403 });
-    //act and assert
-    return getReposWithFetcher(url).catch(result =>  {
-      console.log(result);
+    //act 
+    return getReposWithFetcher(url).catch(result => {
+      //assert
       expect(result).toEqual({ status: 403 });
     });
   });
